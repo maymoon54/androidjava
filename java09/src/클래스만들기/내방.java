@@ -4,8 +4,10 @@ public class 내방 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		//. =>접근연산자
 		휴대폰 p1 = new 휴대폰();
+		//color, size, company 멤버변수 복사 => 자동초기화
+		//p1변수 생성 => 멤버변수드을 가르키는 주소가 들어감.
 		p1.color = "흰색";
 		p1.size = 7;
 		p1.company = "삼성";
