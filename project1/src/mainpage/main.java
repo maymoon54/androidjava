@@ -15,7 +15,7 @@ public class main {
 		
 		// 프레임
 		JFrame main = new JFrame();
-		main.setSize(1000, 1000);
+		main.setSize(1000, 800);
 		main.getContentPane().setLayout(null);
 		
 		
