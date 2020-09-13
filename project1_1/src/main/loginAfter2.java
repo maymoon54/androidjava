@@ -2,8 +2,6 @@ package main;
 
 import java.awt.Dimension;
 
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -13,7 +11,7 @@ import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Font;
 
-public class loginAfter extends JFrame{
+public class loginAfter2 extends JFrame{
 	
 	JPanel top;
 	JPanel contents;
@@ -22,7 +20,7 @@ public class loginAfter extends JFrame{
 	private JLabel loginID;
 	
 	
-	public loginAfter (String id, String pw) {
+	public loginAfter2 (String id, String pw) {
 		setSize(1000,800);
 		setVisible(true);
 		setResizable(false);
@@ -40,7 +38,6 @@ public class loginAfter extends JFrame{
 		logout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new logoutAfter();
-				setVisible(false);
 			
 			}
 		});
@@ -49,13 +46,12 @@ public class loginAfter extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				try {
 					new join.memberinfo(id, pw);
-					setVisible(false);
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 				
-				
+				setVisible(false);
 			}
 		});
 		mypage.setBounds(840, 22, 116, 23);
@@ -80,35 +76,7 @@ public class loginAfter extends JFrame{
 		getContentPane().add(contents);
 		getContentPane().setLayout(null);
 		
-		// 버튼을 배열에 저장하기
-		JButton[] b = new JButton[3];
-
-		// 버튼에 들어갈 이미지
-		String[] img = { "다만.png", "오케이.png", "짱구.png" };
-
-		// 영화제목
-		String[] titles = { "다만악에서구하소서", "오케이마담", "짱구" };
-
-		// for문으로 버튼 여러개 만들기
-		for (int i = 0; i < b.length; i++) {
-			b[i] = new JButton();
-			ImageIcon icon = new ImageIcon(img[i]);
-			b[i].setIcon(icon);
-			//포스터를 클릭하면 해당영화 타이틀 값 변수에 저장
-			String title = titles[i];
-			contents.add(b[i]); //패널에 버튼 배치
-			
-			b[i].addActionListener(new ActionListener() {
-
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					JButton b = (JButton) e.getSource();
-					Icon icon = b.getIcon();
-					System.out.println(title);
-				}
-			});
-		
 	}
 	
-	}
+
 }

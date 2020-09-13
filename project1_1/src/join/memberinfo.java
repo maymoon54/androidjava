@@ -143,6 +143,7 @@ public class memberinfo extends JFrame{
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new logoutAfter();
+				setVisible(false);
 			}
 		});
 		btnNewButton.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
