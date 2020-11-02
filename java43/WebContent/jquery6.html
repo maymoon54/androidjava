@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+$(function() {
+	$('#b1').click(function() {
+	$.ajax({
+		url: "check2.jsp",
+		data: {
+			id: $('#id').val()
+		},
+		success: function(idchk) {
+			console.log(idchk)
+			$('#d1').append(idchk + '<br>') /* 댓글기능과 같이 덮어쓰지않고 추가로 붙일때 append */
+		}
+	})	
+		
+		
+	})	
+})
+</script>
+<body>
+
+</body>
+id입력<input id="id"></input>
+<button id="b1">아이디 중복체크</button>
+<hr>
+<div id="d1"></div> 
+</html>

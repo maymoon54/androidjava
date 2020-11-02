@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#b1').click(function() {
+			$.ajax({
+				url : "check2.jsp",
+				data : {
+					id : $('#id').val()
+				},
+				success : function(idchk) {
+					console.log(idchk)
+					$('#d1').append(idchk + '<br>') /* 댓글기능과 같이 덮어쓰지않고 추가로 붙일때 append */
+				}//success
+			}) //ajax
+
+		}) //b1 click
+		$('#b2').click(function() {
+			$.ajax({
+				url : "reply.jsp", //이중따옴표 없으면 변수로 인식함
+				data : {
+					reply : $('#reply').val()
+				},
+				success : function(result) {
+					$('#d2').append(result)
+				}//success
+			})//ajax
+		})//b2 click
+		
+		$('#b3').click(function() {
+			$.ajax({
+				url : "img.jsp", 
+				success : function(result) {
+					$('#d2').append(result)
+				}//success
+			})//ajax
+		})//b3 click
+		
+		$('#b4').click(function() {
+			$.ajax({
+				url : "reply2.jsp", 
+				data : {
+					reply : $('#reply').val()
+				},
+				success : function(result) {
+					$('#d2').append(result)
+				}//success
+			})//ajax
+		})//b4 click
+	
+		
+		
+		
+		
+	})//ready
+</script>
+<body>
+
+</body>
+id입력
+<input id="id"></input>
+<button id="b1">아이디 중복체크</button>
+<hr>
+<div id="d1"></div>
+
+<hr color="red">
+댓글입력
+<input id="reply"></input>
+<button id="b2">댓글달기(텍스트)</button>
+<button id="b3">댓글달기(이미지)</button>
+<button id="b4">댓글달기(텍스트+이미지)</button>
+<hr>
+<div id="d2"></div>
+
+
+</html>

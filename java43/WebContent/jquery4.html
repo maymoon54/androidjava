@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+$(function() {
+	$('#b1').click(function() {
+	$.ajax({
+		url: "call2.jsp",
+		data: {
+			p: $('#p').val()
+		},
+		success: function(result) {
+			console.log(result)
+			
+		if (result == '보통') {
+					alert('재시험')
+				} else {
+					alert('통과')
+				}	
+		}
+	})	
+		
+		
+	})	
+})
+</script>
+<body>
+
+</body>
+<input id="p"></input>
+<button id="b1">성적결과</button>
+</html>
