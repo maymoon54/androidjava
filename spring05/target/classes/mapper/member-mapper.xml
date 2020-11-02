@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+
+<insert id="create" parameterType="MemberVO">
+	insert into member values (#{id} , #{pw}, #{name}, #{tel});
+</insert>
+
+<!--컬럼이름이랑 vo 이름이 다르면 수동으로 설정  -->
+<!--DB테이블의 항목명과 vo의 멤버변수가 다를때, 수동으로 orm을 정의해주어야 함  -->
+<!-- <resultMap type="MemberVO" id="map1">
+	<result property="id2" column="id"/>
+	<result property="pw2" column="pw"/>
+	<result property="name2" column="name"/>
+	<result property="tel2" column="tel"/>	
+</resultMap> -->
+
+<!-- <select id="one" parameterType="MemberVO" resultMap="map1">
+	select * from member where id = #{id}
+</select> -->
+
+</mapper>
