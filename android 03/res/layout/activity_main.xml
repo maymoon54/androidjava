@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!--gravity 위치선정-->
+    <Chronometer
+        android:id="@+id/ch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:format="시간 측정 : %s"
+        android:gravity="center"
+        android:textColor="#EF0B0B"
+        android:textSize="36dp"
+        android:textStyle="bold" />
+
+    <TimePicker
+        android:id="@+id/timer"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:background="#FDD835"
+        android:timePickerMode="spinner"
+
+        />
+
+    <CalendarView
+        android:id="@+id/calendar"
+        android:layout_width="match_parent"
+        android:layout_height="285dp" />
+    <!--태그사이의 내용이 없어서, 빈태그, empty element -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/start"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="START"
+            android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/end"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="END"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/calButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@android:drawable/ic_menu_month"
+        android:text="날짜가지고오기" />
+
+    <Button
+        android:id="@+id/timeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@android:drawable/ic_menu_recent_history"
+        android:text="시간가지고오기" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="다음 액티비티"/>
+
+</LinearLayout>
+
+
