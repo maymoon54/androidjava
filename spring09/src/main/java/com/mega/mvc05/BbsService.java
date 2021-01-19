@@ -1,5 +1,7 @@
 package com.mega.mvc05;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,5 +13,9 @@ public class BbsService {
 	
 	public BbsVO one(BbsVO vo) {
 		return dao.select(vo);
+	}
+	
+	public List<BbsVO> list() {
+		return dao.list();
 	}
 }

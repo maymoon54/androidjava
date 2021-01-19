@@ -1,11 +1,14 @@
 package com.mega.mvc05;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class BbsController {
@@ -63,4 +66,17 @@ public class BbsController {
 		model.addAttribute("total", service2.list(bbsVO.getNo()).size());
 
 	}
+	@ResponseBody
+	@RequestMapping("json6.do")
+	public List<BbsVO> list() {
+		return service.list();
+		
+	}
+	
+	@ResponseBody
+	@RequestMapping("json5.do")
+	public BbsVO one(BbsVO vo) {
+		return service.one(vo);		
+	}
+	
 }
